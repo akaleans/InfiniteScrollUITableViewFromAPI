@@ -16,5 +16,24 @@ extension UIView {
         trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
         bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true
     }
+}
+
+func canLoadMoreEvents(loading: Bool) -> Bool {
+    if loading {
+        return false
+    }
+    return true
+}
+
+func formatDate(date: String) -> String {
+    
+    var d = date.replacingOccurrences(of: "T", with: " ")
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    if let dateObj = dateFormatter.date(from: d) {
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm a"
+        d = dateFormatter.string(from: dateObj)
+    }
+    return d
     
 }

@@ -49,8 +49,10 @@ class EventCell: UITableViewCell {
     }
     
     func configureTitleLabel() {
+        let font: UIFont = UIFont.boldSystemFont(ofSize: 20)
         eventTitleLabel.numberOfLines = 0
         eventTitleLabel.adjustsFontSizeToFitWidth = true
+        eventTitleLabel.font = font
     }
     
     func configureLocationLabel() {

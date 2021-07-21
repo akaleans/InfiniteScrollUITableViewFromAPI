@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		C58BA20626A246F8007CE78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA20526A246F8007CE78D /* AppDelegate.swift */; };
 		C58BA20826A246F8007CE78D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA20726A246F8007CE78D /* SceneDelegate.swift */; };
-		C58BA20A26A246F8007CE78D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA20926A246F8007CE78D /* ViewController.swift */; };
-		C58BA20D26A246F8007CE78D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58BA20B26A246F8007CE78D /* Main.storyboard */; };
 		C58BA20F26A246F9007CE78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58BA20E26A246F9007CE78D /* Assets.xcassets */; };
 		C58BA21226A246F9007CE78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58BA21026A246F9007CE78D /* LaunchScreen.storyboard */; };
 		C58BA21D26A246F9007CE78D /* SeatGeekUITableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA21C26A246F9007CE78D /* SeatGeekUITableViewTests.swift */; };
 		C58BA22826A246F9007CE78D /* SeatGeekUITableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA22726A246F9007CE78D /* SeatGeekUITableViewUITests.swift */; };
+		C58BA23C26A2472C007CE78D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA23B26A2472C007CE78D /* Event.swift */; };
+		C58BA24726A24A13007CE78D /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA24626A24A13007CE78D /* EventsListViewController.swift */; };
+		C58BA24C26A24BAC007CE78D /* ExtensionsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA24B26A24BAC007CE78D /* ExtensionsHelpers.swift */; };
+		C58BA25126A24CDD007CE78D /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA25026A24CDD007CE78D /* EventCell.swift */; };
+		C5F98B5326A35EFB00AA32AB /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F98B5226A35EFB00AA32AB /* EventData.swift */; };
+		C5F98B5826A35FCE00AA32AB /* PerformerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F98B5726A35FCE00AA32AB /* PerformerData.swift */; };
+		C5F98B5D26A360BB00AA32AB /* VenueData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F98B5C26A360BB00AA32AB /* VenueData.swift */; };
+		C5F98B6226A3685B00AA32AB /* EventDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F98B6126A3685B00AA32AB /* EventDataList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +44,6 @@
 		C58BA20226A246F8007CE78D /* SeatGeekUITableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatGeekUITableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58BA20526A246F8007CE78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C58BA20726A246F8007CE78D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C58BA20926A246F8007CE78D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C58BA20C26A246F8007CE78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C58BA20E26A246F9007CE78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C58BA21126A246F9007CE78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C58BA21326A246F9007CE78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 		C58BA22326A246F9007CE78D /* SeatGeekUITableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeatGeekUITableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58BA22726A246F9007CE78D /* SeatGeekUITableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekUITableViewUITests.swift; sourceTree = "<group>"; };
 		C58BA22926A246F9007CE78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C58BA23B26A2472C007CE78D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		C58BA24626A24A13007CE78D /* EventsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
+		C58BA24B26A24BAC007CE78D /* ExtensionsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsHelpers.swift; sourceTree = "<group>"; };
+		C58BA25026A24CDD007CE78D /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		C5F98B5226A35EFB00AA32AB /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		C5F98B5726A35FCE00AA32AB /* PerformerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformerData.swift; sourceTree = "<group>"; };
+		C5F98B5C26A360BB00AA32AB /* VenueData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueData.swift; sourceTree = "<group>"; };
+		C5F98B6126A3685B00AA32AB /* EventDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +111,10 @@
 		C58BA20426A246F8007CE78D /* SeatGeekUITableView */ = {
 			isa = PBXGroup;
 			children = (
+				C5C6363426A61B19009765F3 /* View */,
+				C5C6363326A61AFD009765F3 /* EventDataModel */,
 				C58BA20526A246F8007CE78D /* AppDelegate.swift */,
 				C58BA20726A246F8007CE78D /* SceneDelegate.swift */,
-				C58BA20926A246F8007CE78D /* ViewController.swift */,
-				C58BA20B26A246F8007CE78D /* Main.storyboard */,
 				C58BA20E26A246F9007CE78D /* Assets.xcassets */,
 				C58BA21026A246F9007CE78D /* LaunchScreen.storyboard */,
 				C58BA21326A246F9007CE78D /* Info.plist */,
@@ -126,6 +138,28 @@
 				C58BA22926A246F9007CE78D /* Info.plist */,
 			);
 			path = SeatGeekUITableViewUITests;
+			sourceTree = "<group>";
+		};
+		C5C6363326A61AFD009765F3 /* EventDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C58BA23B26A2472C007CE78D /* Event.swift */,
+				C5F98B5226A35EFB00AA32AB /* EventData.swift */,
+				C5F98B6126A3685B00AA32AB /* EventDataList.swift */,
+				C5F98B5C26A360BB00AA32AB /* VenueData.swift */,
+				C5F98B5726A35FCE00AA32AB /* PerformerData.swift */,
+			);
+			path = EventDataModel;
+			sourceTree = "<group>";
+		};
+		C5C6363426A61B19009765F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C58BA24626A24A13007CE78D /* EventsListViewController.swift */,
+				C58BA25026A24CDD007CE78D /* EventCell.swift */,
+				C58BA24B26A24BAC007CE78D /* ExtensionsHelpers.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +267,6 @@
 			files = (
 				C58BA21226A246F9007CE78D /* LaunchScreen.storyboard in Resources */,
 				C58BA20F26A246F9007CE78D /* Assets.xcassets in Resources */,
-				C58BA20D26A246F8007CE78D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +291,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C58BA20A26A246F8007CE78D /* ViewController.swift in Sources */,
+				C58BA24C26A24BAC007CE78D /* ExtensionsHelpers.swift in Sources */,
+				C58BA23C26A2472C007CE78D /* Event.swift in Sources */,
+				C5F98B5826A35FCE00AA32AB /* PerformerData.swift in Sources */,
+				C5F98B5326A35EFB00AA32AB /* EventData.swift in Sources */,
+				C5F98B5D26A360BB00AA32AB /* VenueData.swift in Sources */,
+				C58BA24726A24A13007CE78D /* EventsListViewController.swift in Sources */,
+				C5F98B6226A3685B00AA32AB /* EventDataList.swift in Sources */,
 				C58BA20626A246F8007CE78D /* AppDelegate.swift in Sources */,
+				C58BA25126A24CDD007CE78D /* EventCell.swift in Sources */,
 				C58BA20826A246F8007CE78D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +336,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C58BA20B26A246F8007CE78D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C58BA20C26A246F8007CE78D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C58BA21026A246F9007CE78D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

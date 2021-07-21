@@ -13,4 +13,6 @@ struct Event {
     var title: String = ""
     var location: String = ""
     var date: String = ""
+    var id: Int = 0
+    var type: String = ""
 }
