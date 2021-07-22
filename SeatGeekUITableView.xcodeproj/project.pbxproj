@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C548EFBA26A8BC1000330F65 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548EFB926A8BC1000330F65 /* Favorites.swift */; };
+		C548EFCF26A8F38800330F65 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548EFCE26A8F38800330F65 /* EventDetailsViewController.swift */; };
 		C58BA20626A246F8007CE78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA20526A246F8007CE78D /* AppDelegate.swift */; };
 		C58BA20826A246F8007CE78D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA20726A246F8007CE78D /* SceneDelegate.swift */; };
 		C58BA20F26A246F9007CE78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58BA20E26A246F9007CE78D /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C548EFB926A8BC1000330F65 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		C548EFCE26A8F38800330F65 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		C58BA20226A246F8007CE78D /* SeatGeekUITableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatGeekUITableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58BA20526A246F8007CE78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C58BA20726A246F8007CE78D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				C5F98B6126A3685B00AA32AB /* EventDataList.swift */,
 				C5F98B5C26A360BB00AA32AB /* VenueData.swift */,
 				C5F98B5726A35FCE00AA32AB /* PerformerData.swift */,
+				C548EFB926A8BC1000330F65 /* Favorites.swift */,
 			);
 			path = EventDataModel;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			children = (
 				C58BA24626A24A13007CE78D /* EventsListViewController.swift */,
 				C58BA25026A24CDD007CE78D /* EventCell.swift */,
+				C548EFCE26A8F38800330F65 /* EventDetailsViewController.swift */,
 				C58BA24B26A24BAC007CE78D /* ExtensionsHelpers.swift */,
 			);
 			path = View;
@@ -291,11 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C548EFCF26A8F38800330F65 /* EventDetailsViewController.swift in Sources */,
 				C58BA24C26A24BAC007CE78D /* ExtensionsHelpers.swift in Sources */,
 				C58BA23C26A2472C007CE78D /* Event.swift in Sources */,
 				C5F98B5826A35FCE00AA32AB /* PerformerData.swift in Sources */,
 				C5F98B5326A35EFB00AA32AB /* EventData.swift in Sources */,
 				C5F98B5D26A360BB00AA32AB /* VenueData.swift in Sources */,
+				C548EFBA26A8BC1000330F65 /* Favorites.swift in Sources */,
 				C58BA24726A24A13007CE78D /* EventsListViewController.swift in Sources */,
 				C5F98B6226A3685B00AA32AB /* EventDataList.swift in Sources */,
 				C58BA20626A246F8007CE78D /* AppDelegate.swift in Sources */,

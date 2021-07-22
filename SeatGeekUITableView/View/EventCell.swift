@@ -13,6 +13,7 @@ class EventCell: UITableViewCell {
     var eventTitleLabel = UILabel()
     var eventLocationLabel = UILabel()
     var eventDateLabel = UILabel()
+    var id: Int = -1
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)

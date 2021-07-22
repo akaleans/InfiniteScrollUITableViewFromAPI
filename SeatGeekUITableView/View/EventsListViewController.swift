@@ -30,6 +30,7 @@ class EventsListViewController: UIViewController, CLLocationManagerDelegate {
         
         return s
     }()
+    let db = DBHelper()
     
     struct Cells {
         static let eventCell = "EventCell"
@@ -80,7 +81,7 @@ class EventsListViewController: UIViewController, CLLocationManagerDelegate {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let height = scrollView.frame.size.height
         let contentYOffset = scrollView.contentOffset.y
@@ -185,6 +186,15 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.set(event: currentEvent)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let eventDetailsView = EventDetailsViewController()
+        eventDetailsView.event = events[indexPath.row]
+        eventDetailsView.hidesBottomBarWhenPushed = true
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        self.navigationController?.pushViewController(eventDetailsView, animated: true)
     }
     
 }
