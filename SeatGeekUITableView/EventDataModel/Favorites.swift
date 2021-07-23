@@ -23,7 +23,7 @@ class DBHelper {
     }
     
     func createDB() -> OpaquePointer? {
-        let filePath = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathExtension(path)
+        let filePath = try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathExtension(path)
         
         var db: OpaquePointer? = nil
         
@@ -38,7 +38,8 @@ class DBHelper {
     }
     
     func createTable() {
-        let query = "CREATE TABLE IF NOT EXISTS favorites(id INTEGER PRIMARY KEY AUTOINCREMENT, eid INTEGER);"
+        let query = "CREATE TABLE IF NOT EXISTS favorites(id INTEGER PRIMARY KEY AUTOINCREMENT, eid INTEGER NOT NULL UNIQUE);"
+        
         var createTable: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, query, -1, &createTable, nil) == SQLITE_OK {
@@ -59,7 +60,6 @@ class DBHelper {
         var insert: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, query, -1, &insert, nil) == SQLITE_OK {
-            sqlite3_bind_int(insert, 1, 1)
             sqlite3_bind_int(insert, 2, Int32(id))
             
             if sqlite3_step(insert) == SQLITE_DONE {
@@ -71,6 +71,20 @@ class DBHelper {
         }
         else {
             print("Insertion failed")
+        }
+    }
+    
+    func delete(id: Int) {
+        let query = "DELETE FROM favorites where eid = \(id)"
+        var statement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Deletion Success")
+            }
+            else {
+                print("Deletion Failure")
+            }
         }
     }
     

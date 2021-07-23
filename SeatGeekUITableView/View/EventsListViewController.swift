@@ -10,6 +10,7 @@ import CoreLocation
 
 class EventsListViewController: UIViewController, CLLocationManagerDelegate {
     
+    let db = DBHelper()
     var tableView = UITableView()
     var events: [Event] = []
     var filteredEvents: [Event] = []
@@ -30,7 +31,6 @@ class EventsListViewController: UIViewController, CLLocationManagerDelegate {
         
         return s
     }()
-    let db = DBHelper()
     
     struct Cells {
         static let eventCell = "EventCell"
@@ -40,7 +40,6 @@ class EventsListViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
 
         navigationItem.searchController = searchController
-        
         getLocationEvents()
     }
     
@@ -105,7 +104,7 @@ class EventsListViewController: UIViewController, CLLocationManagerDelegate {
     
     func parsePageFromResponse(data: Data?, response: URLResponse?, error: Error?){
         guard error == nil else {
-            print("Error: \(error)")
+            print("Error: \(String(describing: error))")
             loading = false
             return
         }
@@ -166,6 +165,10 @@ class EventsListViewController: UIViewController, CLLocationManagerDelegate {
 
 extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltered() { return filteredEvents.count }
         return events.count
@@ -173,6 +176,8 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.eventCell) as! EventCell
+        
+        let favorites = db.getFavorites()
         
         let currentEvent: Event
         
@@ -183,6 +188,10 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
             currentEvent = events[indexPath.row]
         }
         
+        if favorites.contains(where: { $0.id == currentEvent.id }) == false {
+            cell.favoriteImage.removeFromSuperview()
+        }
+        
         cell.set(event: currentEvent)
         
         return cell
@@ -190,8 +199,14 @@ extension EventsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let eventDetailsView = EventDetailsViewController()
-        eventDetailsView.event = events[indexPath.row]
+        if isSearchBarEmpty(){
+            eventDetailsView.event = events[indexPath.row]
+        }
+        else {
+            eventDetailsView.event = filteredEvents[indexPath.row]
+        }
         eventDetailsView.hidesBottomBarWhenPushed = true
+        eventDetailsView.db = db
         tableView.deselectRow(at: indexPath, animated: false)
         
         self.navigationController?.pushViewController(eventDetailsView, animated: true)

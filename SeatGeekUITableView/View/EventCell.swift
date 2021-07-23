@@ -9,11 +9,13 @@ import UIKit
 
 class EventCell: UITableViewCell {
     
+    let db = DBHelper()
     var eventImageView = UIImageView()
     var eventTitleLabel = UILabel()
     var eventLocationLabel = UILabel()
     var eventDateLabel = UILabel()
     var id: Int = -1
+    var favoriteImage = UIImageView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,12 +38,27 @@ class EventCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func set(event: Event){
         eventImageView.image = event.image
         eventTitleLabel.text = event.title
         eventLocationLabel.text = event.location
         eventDateLabel.text = event.date
+        id = event.id
+        
+        let favorites = db.getFavorites()
+        if (favorites.contains(where: { $0.id == id }) == true) {
+            setFavoriteView()
+        }
+    }
+    
+    func setFavoriteView() {
+        favoriteImage.image = UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .large))
+        favoriteImage.tintColor = .systemPink
+        favoriteImage.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(favoriteImage)
+        favoriteImage.centerYAnchor.constraint(equalTo: eventImageView.topAnchor).isActive = true
+        favoriteImage.centerXAnchor.constraint(equalTo: eventImageView.leadingAnchor).isActive = true
     }
     
     func configureImageView() {
